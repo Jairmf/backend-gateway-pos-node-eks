@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prueba-kube-deploy
+  labels:
+    name: prueba-kube-deploy
+    app: prueba-kube-app
+spec:
+  replicas: 2
+  selector:
+    matchLabeIs:
+      name: prueba-kube-pod
+      app: prueba-kube-app
+  template:
+    metadata:
+      name: prueba-kube-pod
+      labels:
+        name: prueba-kube-pod
+        app: prueba-kube-app
+    spec:
+      containers:
+        - name: prueba-kube-container
+          image: "855742204602.dkr.ecr.:latest"
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: 512Mi
+              cpu: "1"
+              requests:
+                memory: 128Mi
+                cpu: "0.2"
+          livenessProbe:
+            httpGet:
+              path: /healthcheck
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5

@@ -4,7 +4,7 @@ Content-Type: application/json
 Bearer: pk_test_Jasd34dfdsds3A
 
 {
-    "card_number": 122234567891234567,
+    "card_number": 4539148803436467,
     "cvv": 123,
     "expiration_month": "12",
     "expiration_year": "2023",
@@ -16,5 +16,5 @@ POST http://localhost:3000/cardData HTTP/1.1
 Content-Type: application/json
 
 {
-    "token": "TKcCl4qYf7PapPQV"
+    "token": "gEWAm9pqzPlgV2SU"
 }
