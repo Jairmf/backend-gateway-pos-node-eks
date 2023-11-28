@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:18-alpine
 # Create app directory
 WORKDIR /usr/src/app
 # Copy the files into workdir
@@ -10,4 +10,4 @@ COPY . .
 # Expose the port to get access
 EXPOSE 3000
 # Run the node command
-CMD [ "node", "app.js" ]
+CMD [ "node", "dist/main.js" ]
